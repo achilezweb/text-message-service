@@ -1,0 +1,20 @@
+{
+    "Version": "2012-10-17",
+    "Id": "Policy1609863795158",
+    "Statement": [
+        {
+            "Sid": "Stmt1609863791160",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::123456789012:user/YourUser"
+            },
+            "Action": [
+                "SQS:SendMessage",
+                "SQS:ReceiveMessage",
+                "SQS:DeleteMessage",
+                "SQS:GetQueueAttributes"
+            ],
+            "Resource": "arn:aws:sqs:us-east-1:123456789012:SMSMessageQueue"
+        }
+    ]
+}

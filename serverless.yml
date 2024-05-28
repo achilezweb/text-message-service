@@ -1,0 +1,16 @@
+service: sms-service
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: prod
+  region: us-east-1
+
+functions:
+  app:
+    handler: app.handler
+    events:
+      - http:
+          path: message
+          method: post
+          cors: true
